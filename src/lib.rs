@@ -14,10 +14,43 @@
 #![forbid(unsafe_code, future_incompatible)]
 #![deny(missing_debug_implementations, nonstandard_style)]
 
+//! An alternate method of running `async fn` tests. Meant for use with [`async-std`].
+//!
+//! The only export in this crate is a procedural macro, [`async_test`].
+//! It can be invoked as follows:
+//!
+//! ```ignore
+//! #[async_test]
+//! async fn my_test() -> std::io::Result<()> {
+//!     assert_eq!(2 * 2, 4);
+//!     Ok(())
+//! }
+//! ```
+//!
+//! [`async-std`]: https://docs.rs/async-std
+//! [`async_test`]: ./attr.async_test.html
+
 use proc_macro::TokenStream;
 use quote::{quote, quote_spanned};
 use syn::spanned::Spanned;
 
+/// Enables this test to be run in an `async fn`.
+///
+/// Requires that the test return [`Result`] with the error
+/// type implementing [`Display`].
+///
+/// # Examples
+///
+/// ```ignore
+/// #[async_test]
+/// async fn my_test() -> std::io::Result<()> {
+///     assert_eq!(2 * 2, 4);
+///     Ok(())
+/// }
+/// ```
+///
+/// [`Display`]: https://doc.rust-lang.org/std/fmt/trait.Display.html
+/// [`Result`]: https://doc.rust-lang.org/std/result/enum.Result.html
 #[proc_macro_attribute]
 pub fn async_test(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let input = syn::parse_macro_input!(item as syn::ItemFn);
