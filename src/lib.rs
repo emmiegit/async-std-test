@@ -38,7 +38,15 @@ pub fn async_test(_attr: TokenStream, item: TokenStream) -> TokenStream {
         #[::core::prelude::v1::test]
         #(#attrs)*
         #vis fn #name() #ret {
-            async_std::task::block_on(async { #body })
+            async_std::task::block_on(async {
+                let result = {
+                    #body
+                };
+
+                if let Err(error) = result {
+                    panic!("Error in test: {}", error);
+                }
+            })
         }
     };
 
