@@ -12,5 +12,12 @@ version = "0.0.1"
 authors = ["Ammon Smith <ammon.i.smith@gmail.com>"]
 edition = "2021" # this is *not* the same as the current year
 
+[lib]
+proc-macro = true
+
 [dependencies]
+syn = { version = "1", features = ["full"] }
+quote = "1"
+
+[dev-dependencies]
 async-std = "1"
