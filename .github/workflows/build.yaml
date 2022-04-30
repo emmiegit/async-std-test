@@ -35,6 +35,9 @@ jobs:
       - name: Build
         run: cargo build
 
+      - name: Documentation
+        run: cargo doc --no-deps
+
       - name: Test
         run: cargo test
 
