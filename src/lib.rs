@@ -70,7 +70,7 @@ pub fn async_test(_attr: TokenStream, item: TokenStream) -> TokenStream {
     let result = quote! {
         #[::core::prelude::v1::test]
         #(#attrs)*
-        #vis fn #name() #ret {
+        #vis fn #name() {
             async fn test_inner() #ret {
                 #body
             }
