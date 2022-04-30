@@ -1,0 +1,16 @@
+[package]
+name = "async-std-test"
+description = "Alternate implementation of the #[async_std::test] macro"
+repository = "https://github.com/ammongit/async-std-test"
+readme = "README.md"
+license = "MIT"
+keywords = ["async", "test", "async-std"]
+categories = ["asynchronous"]
+exclude = [".gitignore"]
+
+version = "0.0.1"
+authors = ["Ammon Smith <ammon.i.smith@gmail.com>"]
+edition = "2021" # this is *not* the same as the current year
+
+[dependencies]
+async-std = "1"
