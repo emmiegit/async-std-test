@@ -6,7 +6,7 @@ readme = "README.md"
 license = "MIT"
 keywords = ["async", "test", "async-std"]
 categories = ["asynchronous"]
-exclude = [".gitignore"]
+exclude = [".gitignore", ".github"]
 
 version = "0.0.1"
 authors = ["Ammon Smith <ammon.i.smith@gmail.com>"]
