@@ -1,7 +1,7 @@
 ## async-std-test
 
-<a href="https://github.com/ammongit/async-std-test/actions?query=workflow%3A%22Build%22">
-  <img src="https://github.com/ammongit/async-std-test/workflows/Build/badge.svg"
+<a href="https://github.com/emmiegit/async-std-test/actions?query=workflow%3A%22Build%22">
+  <img src="https://github.com/emmiegit/async-std-test/workflows/Build/badge.svg"
        alt="Build status">
 </a>
 

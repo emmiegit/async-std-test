@@ -1,7 +1,7 @@
 [package]
 name = "async-std-test"
 description = "Alternate implementation of the #[async_std::test] macro"
-repository = "https://github.com/ammongit/async-std-test"
+repository = "https://github.com/emmiegit/async-std-test"
 readme = "README.md"
 license = "MIT"
 keywords = ["async", "test", "async-std"]
